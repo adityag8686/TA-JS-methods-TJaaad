@@ -68,46 +68,60 @@ console.log(quoteSplitted);
 /*
 11. Change the word "today" in quoteSplitted to "tomorrow" and join all the words to form a sentance.
 */
-let splittrd = quoteSplitted.replace(/"today","tomorrow");
-console.log(splittrd)
+let splitted = quoteSplitted.indexOf("today");
+quoteSplitted[splitted] = "tomorrow";
+
+console.log(quoteSplitted);
+
 /*
 12. Find the index of second "o" in quote. Use indexOf
 */
-
+console.log(quote.indexOf("o",8));
 /*
 13. Find the last index of letter "a" in quote.
 */
-
+console.log(quote.lastIndexOf("a"));
 /*
 14. Find the second last index of letter "a" in quote.
 */
+let lasta = quote.lastIndexOf("a");
+lasta = lasta -1;
+console.log(quote.lastIndexOf("a",lasta));
 
 /*
 15. Make the quote 70 character long. If it has less characters add rest as .......
 Example: "Hello" (convert to 10 characters) => "Hello....."
 Store the output in a new variable
 */
-
+let length =70;
+let totallength = quote.length;
+console.log(quote+".".repeat(length-totallength));
 /*
 16. Do same as (15) but the ... should come in start. Store the output in a new variable
 */
-
+console.log(".".repeat(length-totallength) + quote);
 /*
 17. Log the repeat of "Hello World!" 10 times.
 */
-
+console.log("Hello World!".repeat(10));
 /*
 18. Replace today to tomorrow in quote.
 */
-
+quote.replace("today", "tomorrow");
 /*
 19. Replace Stark to Lannister in quoteTo
 */
-
+to.replace("Stark", "Lannister");
 /*
 20. Make the quote of length 30 and put ... at the end. (use slice)
 */
-
+console.log(quote.slice(0,10)+"...");
 /*
 21. Find out does quote, from, to starts with "A"
 */
+if (quote.startsWith("A")&& from.startsWith("A") && to.startsWith("A")){
+  console.log("true");
+}
+else{
+  console.log("false");
+}
