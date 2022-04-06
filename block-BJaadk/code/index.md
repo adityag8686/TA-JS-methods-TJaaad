@@ -60,7 +60,7 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
-
+it will alert all the values but double numbers will store undefined for each element
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function isOdd(num) {
@@ -68,7 +68,7 @@ function isOdd(num) {
 }
 let oddNumbers = numbers.filter(isOdd);
 ```
-
+will store all oddd
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function test(num) {
@@ -76,6 +76,7 @@ function test(num) {
 }
 let filteredNumbers = numbers.filter(test);
 ```
+it will store al the elemnt in filtered numbers
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -84,7 +85,7 @@ function test(num) {
 }
 let filteredNumbers = numbers.filter(test);
 ```
-
+it will print all the elemnt but filtered number will be empty
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function add(accumulator, currentValue) {
@@ -92,7 +93,7 @@ function add(accumulator, currentValue) {
 }
 let sum = numbers.reduce(add);
 ```
-
+sum will have  the sum of all the elements
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function add(accumulator, currentValue) {
@@ -100,3 +101,4 @@ function add(accumulator, currentValue) {
 }
 let sum = numbers.reduce(add);
 ```
+it will not run for all the condition only for first 2 it will provide the result as there is no return of the sum of first two
