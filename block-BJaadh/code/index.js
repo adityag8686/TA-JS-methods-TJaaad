@@ -69,13 +69,15 @@ console.log(odd);
 strings.unshift("new");
 console.log(strings);
 // - Make a subset of numbers array [18,9,7,11]
-
+numbers.slice(3,7)
 // - Make a subset of strings array ['a','collection']
-
+strings.slice(3,5)
 // - Replace 12 & 18 with 1221 and 1881
-
+numbers.splice(numbers.indexOf(12),1,1221);
+numbers.splice(numbers.indexOf(18),1,1881);
 // - Replace words in strings array with the length of the word
-
+strings.splice(strings.indexOf("words"),1,(strings.length));
+console.log(strings);
 // - Find the sum of the length of words using above question
 
 // - Customers Array
@@ -86,11 +88,15 @@ var customers = [
   { firstname: 'Jack', lastname: 'White' },
 ];
 // - Find all customers whose firstname starts with 'J'
-
+let FirstName = customers.filter((customer) => customer.firstname.startsWith("J"));
+console.log(FirstName);
 // - Create new array with only first name
-
+let name = customers.map((customer)=>customer.firstname);
+console.log(name);
 // - Create new array with all the full names (ex: "Joe Blogs")
+let fullname = customers.map((customer)=>`${customer.firstname} ${customer.lastname}`);
+console.log(fullname);
 
 // - Sort the array created above alphabetically
-
+fullname.sort();
 // - Create a new array that contains only user who has at least one vowel in the firstname.
