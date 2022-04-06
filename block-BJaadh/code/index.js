@@ -11,37 +11,63 @@ Clone the array before using sort method: [...arr]
 */
 
 // - Find the index of `101` in numbers
-
+console.log(numbers.indexOf(101));
 // - Find the last index of `9` in numbers
-
+console.log(numbers.lastIndexOf(9));
 // - Convert value of strings array into a sentance like "This is a collection of words"
-
+console.log(strings.join(" "));
 // - Add two new words in the strings array "called" and "sentance"
-
+strings.push("called", "sentance")
 // - Again convert the updated array (strings) into sentance like "This is a collection of words called sentance"
-
+console.log(strings.join(" "));
 // - Remove the first word in the array (strings)
-
+console.log(strings.shift());
 // - Find all the words that contain 'is' use string method 'includes'
+console.log(strings.includes("is"));
 
 // - Find all the words that contain 'is' use string method 'indexOf'
-
+console.log(strings.indexOf("is"));
 // - Check if all the numbers in numbers array are divisible by three use array method (every)
-
+numbers.forEach((num) => {
+  console.log(num % 3 === 0);
+})
 // -  Sort Array from smallest to largest
-
+let sortarr = [...numbers];
+sortarr.sort(function(a, b) {
+  return a - b;
+});
+console.log(sortarr);
 // - Remove the last word in strings
-
+console.log(strings.pop());
 // - Find largest number in numbers
-
+console.log(sortarr[sortarr.length-1]);
 // - Find longest string in strings
-
+let longeststring = 0;
+for(let i = 0; i<strings.length; i++){
+  if (strings[i].length > longeststring){
+    longeststring = strings[i].length;
+  }
+}
+console.log(longeststring);
 // - Find all the even numbers
-
+let even = [];
+for (let i = 0; i<numbers.length; i++){
+  if (numbers[i] % 2 === 0){
+    even.push(numbers[i]);
+  }
+}
+console.log(even);
 // - Find all the odd numbers
-
+let odd = [];
+for (let i = 0; i<numbers.length; i++){
+  if (numbers[i] % 2 !== 0){
+    odd.push(numbers[i]);
+  }
+}
+console.log(odd);
 // - Place a new word at the start of the array use (unshift)
-
+strings.unshift("new");
+console.log(strings);
 // - Make a subset of numbers array [18,9,7,11]
 
 // - Make a subset of strings array ['a','collection']
