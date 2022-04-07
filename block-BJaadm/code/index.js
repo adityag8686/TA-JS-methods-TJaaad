@@ -14,8 +14,12 @@ let persons = [
 ];
 
 // Create an array peopleName and store value of sex key from persons array
+let peopelName =[];
+peopelName.push(persons.sex);
 
 // Create an array peopleGrade and store the value of grade key from persons array
+let peopleGrade = [];
+peopleGrade.push(persons.grade)
 
 // Create an array peopleSex and store the value of sex key from persons array
 
