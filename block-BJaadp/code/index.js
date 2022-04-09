@@ -1,46 +1,89 @@
 let persons = [
-  { name: 'John', grade: 8, sex: 'M' },
-  { name: 'Sarah', grade: 12, sex: 'F' },
-  { name: 'Bob', grade: 16, sex: 'M' },
-  { name: 'Johnny', grade: 2, sex: 'M' },
-  { name: 'Ethan', grade: 4, sex: 'M' },
-  { name: 'Paula', grade: 18, sex: 'F' },
-  { name: 'Donald', grade: 5, sex: 'M' },
-  { name: 'Jennifer', grade: 13, sex: 'F' },
-  { name: 'Courtney', grade: 15, sex: 'F' },
-  { name: 'Jane', grade: 9, sex: 'F' },
-  { name: 'John', grade: 17, sex: 'M' },
-  { name: 'Arya', grade: 14, sex: 'F' },
+  { name: "John", grade: 8, sex: "M" },
+  { name: "Sarah", grade: 12, sex: "F" },
+  { name: "Bob", grade: 16, sex: "M" },
+  { name: "Johnny", grade: 2, sex: "M" },
+  { name: "Ethan", grade: 4, sex: "M" },
+  { name: "Paula", grade: 18, sex: "F" },
+  { name: "Donald", grade: 5, sex: "M" },
+  { name: "Jennifer", grade: 13, sex: "F" },
+  { name: "Courtney", grade: 15, sex: "F" },
+  { name: "Jane", grade: 9, sex: "F" },
+  { name: "John", grade: 17, sex: "M" },
+  { name: "Arya", grade: 14, sex: "F" },
 ];
 
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
-
+let total =
+  persons.reduce((acc, cv) => {
+    acc = acc + cv.grade;
+    return acc;
+  }, 0) / persons.length;
 // Find the average grade of male
-
+let resultm =
+  persons.reduce((acc, cv) => {
+    if (cv.sex == "M") {
+      acc = acc + cv.grade;
+    }
+    return acc;
+  }, 0) / persons.length;
 // Find the average grade of female
-
+let resultmf =
+  persons.reduce((acc, cv) => {
+    if (cv.sex == "F") {
+      acc = acc + cv.grade;
+    }
+    return acc;
+  }, 0) / persons.length;
 // Find the highest grade
-
+let highest = persons.reduce((acc, cv) => {
+  if (cv.grade > acc) {
+    acc = cv.grade;
+  }
+  return acc;
+}, 0);
 // Find the highest grade in male
-
+let highestm = persons.reduce((acc, cv) => {
+  if (cv.sex == "M") {
+    if (cv.grade > acc) {
+      acc = cv.grade;
+    }
+  }
+  return acc;
+}, 0);
 // Find the highest grade in female
-
+let highestf = persons.reduce((acc, cv) => {
+  if (cv.sex == "F") {
+    if (cv.grade > acc) {
+      acc = cv.grade;
+    }
+  }
+  return acc;
+}, 0);
 // Find the highest grade for people whose name starts with 'J' or 'P'
+let highestjp = persons.reduce((acc, cv) => {
+  if (cv.name.startsWith("J") || cv.name.startsWith("P")) {
+    if (cv.grade > acc) {
+      acc = cv.grade;
+    }
+  }
+  return acc;
+}, 0);
 
 const fruitBasket = [
-  'banana',
-  'cherry',
-  'orange',
-  'apple',
-  'cherry',
-  'orange',
-  'apple',
-  'banana',
-  'cherry',
-  'orange',
-  'fig',
+  "banana",
+  "cherry",
+  "orange",
+  "apple",
+  "cherry",
+  "orange",
+  "apple",
+  "banana",
+  "cherry",
+  "orange",
+  "fig",
 ];
 
 /* 
@@ -51,7 +94,17 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
-
+let fruitsObj =  fruitBasket.reduce((acc,cv) =>{
+  if (acc[cv]){
+    acc[cv] = acc[cv] + 1;
+  }
+  else
+  {
+    acc[cv] = 1
+  }
+  return acc;
+},{});
+  
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
@@ -79,7 +132,9 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
-
+let dataresult = dataTwo.reduce((acc,cv) => {
+  return acc.concat(cv.flat(Infinity));
+},[]);
 /*
 
 Create these functions which accepts a number value and returns a number value:
@@ -113,7 +168,23 @@ EXAMPLE:
   decrement(8) - return 7
 
   ...
+  
 */
+function increment (value){
+  return value+1;
+}
+function double (value){
+  return value*2;
+}
+function decrement (value){
+  return value-1;
+}
+function triple (value){
+  return value*3;
+}
+const result = pipeline.reduce((total, func) => {
+return func(total);
+}, 1);
 
 let pipeline2 = [
   increment,
