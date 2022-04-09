@@ -55,7 +55,7 @@ function peopleNameOfAllHouses() {
   // your code goes here
   let final = {};
   got.houses.forEach((house) =>{
-    final[house.name] = house.people.map((p) => p.name);
+    final[house.name] = house.people.map((person) => person.name);
   });
   return final;
 }
