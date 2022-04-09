@@ -2,6 +2,14 @@
 
 function countAllPeople() {
   // your code goes here
+  let c =0
+  for (let i = 0; i<got.houses.length ; i++){
+    for (let j= 0; j<got.houses.people.length; j++){
+      if (got.houses.people.name)
+      c++;
+    }
+  }
+  return c;
 }
 
 function peopleByHouses() {
